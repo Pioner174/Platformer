@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]private float speedX = -1f;
+    [SerializeField]private float speedX = 1f;
     [SerializeField]private float speedY =  0f;
+
+    private float horizontal;
     private Rigidbody2D rb;
 
     const float SpeedMultyplier = 50f;
@@ -18,12 +20,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        horizontal = Input.GetAxis("Horizontal");
     }
    
    void FixedUpdate()
    {
        
-       rb.velocity = new Vector2(speedX * SpeedMultyplier * Time.fixedDeltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal * speedX * SpeedMultyplier * Time.fixedDeltaTime, rb.velocity.y);
+
    }
 }
