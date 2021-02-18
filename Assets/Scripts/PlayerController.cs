@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]private float speedX = 1f;
-    [SerializeField]private float speedY =  0f;
+    [SerializeField]private float speedY =  1f;
 
+    private bool isGround = false;
+    private bool isJump = false;
     private float horizontal;
     private Rigidbody2D rb;
 
@@ -21,12 +23,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
+        if (Input.GetKey(KeyCode.W) && isGround){
+            isJump=true;
+        }
     }
    
    void FixedUpdate()
    {
-       
         rb.velocity = new Vector2(horizontal * speedX * SpeedMultyplier * Time.fixedDeltaTime, rb.velocity.y);
-
+        if (isJump){
+            rb.AddForce(new Vector2(0f, 250f * speedY));
+            isGround = false;
+            isJump = false;
+        }
+        
    }
+
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Ground")){
+            isGround = true;
+        }
+    }
+
 }
