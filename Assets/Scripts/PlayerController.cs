@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
    {
         rb.velocity = new Vector2(horizontal * speedX * SpeedMultyplier * Time.fixedDeltaTime, rb.velocity.y);
         if (isJump){
-            rb.AddForce(new Vector2(0f, 250f * speedY));
+            rb.AddForce(new Vector2(0f, 300f * speedY));
             isGround = false;
             isJump = false;
         }
