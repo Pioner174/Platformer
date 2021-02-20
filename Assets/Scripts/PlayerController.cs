@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]private float speedX = 1f;
+    [SerializeField]private float speedX = 4f;
     [SerializeField]private float speedY =  1f;
 
     private bool isGround = false;
