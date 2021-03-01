@@ -5723,8 +5723,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550ccc93a71689241be7de0a87e4d7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 8
-  speedY: 10
+  speedX: 7
+  speedY: 8
   animator: {fileID: 1179806785}
 --- !u!1001 &4896173981083168993
 PrefabInstance:
