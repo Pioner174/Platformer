@@ -6,11 +6,14 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]private float speedX = 4f;
     [SerializeField]private float speedY =  1f;
+    [SerializeField]private Animator animator; 
 
     private bool isGround = false;
     private bool isJump = false;
     private float horizontal;
     private Rigidbody2D rb;
+
+    private bool IsFasingRight = true;
 
     const float SpeedMultyplier = 50f;
     
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
+        animator.SetFloat("SpeedX", Mathf.Abs(horizontal));
         if (Input.GetKey(KeyCode.W) && isGround){
             isJump=true;
         }
@@ -36,9 +40,20 @@ public class PlayerController : MonoBehaviour
             isGround = false;
             isJump = false;
         }
+        if(horizontal > 0f && !IsFasingRight){
+            Flip();
+        }else if(horizontal<0 && IsFasingRight){
+            Flip(); 
+        }
         
    }
 
+    void Flip(){
+        IsFasingRight  = !IsFasingRight;
+        Vector3 playerscale = transform.localScale;
+        playerscale.x *= -1;
+        transform.localScale = playerscale;
+    }
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Ground")){
             isGround = true;
