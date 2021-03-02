@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float speedY =  1f;
     [SerializeField]private Animator animator; 
 
+    private bool isFinish = false;
     private bool isGround = false;
     private bool isJump = false;
     private float horizontal;
     private Rigidbody2D rb;
+    private GameObject finish;
 
     private bool IsFasingRight = true;
 
@@ -20,7 +22,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
      rb =GetComponent<Rigidbody2D>();
-     rb.velocity = new Vector2(1f, 2f);    
+     rb.velocity = new Vector2(1f, 2f);
+     finish = GameObject.FindGameObjectWithTag("Finish");    
     }
 
     void Update()
@@ -29,6 +32,9 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("SpeedX", Mathf.Abs(horizontal));
         if (Input.GetKey(KeyCode.W) && isGround){
             isJump=true;
+        }
+        if(Input.GetKeyDown(KeyCode.F) && isFinish){
+            finish.SetActive(false);
         }
     }
    
@@ -57,6 +63,14 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Ground")){
             isGround = true;
+        }
+        if (other.gameObject.CompareTag("Finish")){
+            
+            isFinish = true;
+            Debug.Log(isFinish);
+        }else{
+            isFinish = false;
+            Debug.Log(isFinish);
         }
     }
 
