@@ -68,8 +68,14 @@ public class PlayerController : MonoBehaviour
             
             isFinish = true;
             Debug.Log(isFinish);
-        }else{
+        }else if(!other.gameObject.CompareTag("Finish") && isFinish){
             isFinish = false;
+            Debug.Log(isFinish);
+        }
+    }
+    void OnCollisionExit2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Finish")){
+           isFinish = false;
             Debug.Log(isFinish);
         }
     }
