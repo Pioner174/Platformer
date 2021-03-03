@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isJump = false;
     private float horizontal;
     private Rigidbody2D rb;
-    private GameObject finish;
+    private Finish finish;
 
     private bool IsFasingRight = true;
 
@@ -21,9 +21,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-     rb =GetComponent<Rigidbody2D>();
-     rb.velocity = new Vector2(1f, 2f);
-     finish = GameObject.FindGameObjectWithTag("Finish");    
+        rb =GetComponent<Rigidbody2D>();
+        finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();    
     }
 
     void Update()
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
             isJump=true;
         }
         if(Input.GetKeyDown(KeyCode.F) && isFinish){
-            finish.SetActive(false);
+            finish.FinishLevel();
         }
     }
    
