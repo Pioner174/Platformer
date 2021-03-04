@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]private float speedX = 4f;
@@ -11,18 +14,22 @@ public class PlayerController : MonoBehaviour
     private bool isFinish = false;
     private bool isGround = false;
     private bool isJump = false;
+    private bool IsFasingRight = true;
+    private bool isLeverArm = false;
+
     private float horizontal;
     private Rigidbody2D rb;
     private Finish finish;
-
-    private bool IsFasingRight = true;
+    private LeverArm leverArm;
+    
 
     const float SpeedMultyplier = 50f;
     
     void Start()
     {
         rb =GetComponent<Rigidbody2D>();
-        finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();    
+        finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();   
+        leverArm = FindObjectOfType<LeverArm>(); 
     }
 
     void Update()
@@ -32,8 +39,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && isGround){
             isJump=true;
         }
-        if(Input.GetKeyDown(KeyCode.F) && isFinish){
-            finish.FinishLevel();
+        if(Input.GetKeyDown(KeyCode.F)){
+            if(isFinish){
+                finish.FinishLevel();
+            }
+            if(isLeverArm){
+                leverArm.ActivateLever();
+            }
         }
     }
    
@@ -50,7 +62,9 @@ public class PlayerController : MonoBehaviour
         }else if(horizontal<0 && IsFasingRight){
             Flip(); 
         }
-        
+        if(Input.GetKeyDown(KeyCode.F) && isLeverArm){
+
+        }
    }
 
     void Flip(){
@@ -65,15 +79,25 @@ public class PlayerController : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D other) {
+        LeverArm LeverArmTemp = other.GetComponent<LeverArm>();
         if(other.CompareTag("Finish")){
             isFinish = true;
             Debug.Log(isFinish);
         }
+        if(LeverArmTemp != null){
+            Debug.Log("isLeverArm стал true");
+            isLeverArm = true;
+        }
     }
     private void  OnTriggerExit2D(Collider2D other) {
+        LeverArm LeverArmTemp = other.GetComponent<LeverArm>();
         if (other.CompareTag("Finish")){
            isFinish = false;
             Debug.Log(isFinish);
+        }
+        if(LeverArmTemp != null){
+             Debug.Log("isLeverArm стал false");
+            isLeverArm = false;
         }
     }
 }

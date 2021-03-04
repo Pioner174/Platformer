@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Finish : MonoBehaviour
 {
-    public void FinishLevel(){
-        gameObject.SetActive(false);
+    private bool isActivated = false;
+
+    public void Activate(){
+        isActivated = true;
+    }
+    public void FinishLevel()
+    {
+        if (isActivated){
+            gameObject.SetActive(false);
+        }
+        
     }
 }
