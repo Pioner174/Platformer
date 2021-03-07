@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start(){
         rb = GetComponent<Rigidbody2D>();
-        leftBoundaryPosition = transform.position;
-        rightBoundaryPosition = leftBoundaryPosition + Vector2.right
+        LeftBoundaryPosition = transform.position;
+        RightBoundaryPosition = LeftBoundaryPosition + Vector2.right * walkDistance;
     }
 }
