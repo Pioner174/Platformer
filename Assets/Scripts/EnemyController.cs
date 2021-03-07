@@ -17,4 +17,12 @@ public class EnemyController : MonoBehaviour
         LeftBoundaryPosition = transform.position;
         RightBoundaryPosition = LeftBoundaryPosition + Vector2.right * walkDistance;
     }
+
+    private void FixedUpdate() {
+        rb.MovePosition((Vector2)transform.position +Vector2.right * walkSpeed *Time.fixedDeltaTime);
+    }
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(LeftBoundaryPosition, RightBoundaryPosition);
+    }
 }
