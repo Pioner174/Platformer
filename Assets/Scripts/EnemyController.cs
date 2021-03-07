@@ -8,21 +8,21 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float walkSpeed = 1f;
     [SerializeField] private float timeToWait = 5f;
 
-    private Rigidbody2D rb;
-    private Vector2 LeftBoundaryPosition;
-    private Vector2 RightBoundaryPosition;
+    private Rigidbody2D _rb;
+    private Vector2 _LeftBoundaryPosition;
+    private Vector2 _RightBoundaryPosition;
 
     private void Start(){
-        rb = GetComponent<Rigidbody2D>();
-        LeftBoundaryPosition = transform.position;
-        RightBoundaryPosition = LeftBoundaryPosition + Vector2.right * walkDistance;
+        _rb = GetComponent<Rigidbody2D>();
+        _LeftBoundaryPosition = transform.position;
+        _RightBoundaryPosition = _LeftBoundaryPosition + Vector2.right * walkDistance;
     }
 
     private void FixedUpdate() {
-        rb.MovePosition((Vector2)transform.position +Vector2.right * walkSpeed *Time.fixedDeltaTime);
+        _rb.MovePosition((Vector2)transform.position +Vector2.right * walkSpeed *Time.fixedDeltaTime);
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(LeftBoundaryPosition, RightBoundaryPosition);
+        Gizmos.DrawLine(_LeftBoundaryPosition, _RightBoundaryPosition);
     }
 }

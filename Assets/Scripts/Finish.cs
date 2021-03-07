@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-    private bool isActivated = false;
+    private bool _isActivated = false;
 
     public void Activate(){
-        isActivated = true;
+        _isActivated = true;
     }
     public void FinishLevel()
     {
-        if (isActivated){
+        if (_isActivated){
             gameObject.SetActive(false);
         }
         
