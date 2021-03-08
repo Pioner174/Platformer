@@ -11,15 +11,26 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _LeftBoundaryPosition;
     private Vector2 _RightBoundaryPosition;
+    private bool _isFacingRight = true;
 
+    private bool _isWait = false;
     private void Start(){
         _rb = GetComponent<Rigidbody2D>();
         _LeftBoundaryPosition = transform.position;
         _RightBoundaryPosition = _LeftBoundaryPosition + Vector2.right * walkDistance;
     }
-
+    private void Update() {
+        bool isOutOfRightBoundary = _isFacingRight && transform.position.x >= _RightBoundaryPosition.x;
+        bool isOutOfLeftBoundary = !_isFacingRight && transform.position.x <= _LeftBoundaryPosition.x;
+        if(isOutOfRightBoundary || isOutOfLeftBoundary){
+            _isWait = true;
+        }
+    }
     private void FixedUpdate() {
-        _rb.MovePosition((Vector2)transform.position +Vector2.right * walkSpeed *Time.fixedDeltaTime);
+        if(!_isWait){
+            _rb.MovePosition((Vector2)transform.position +Vector2.right * walkSpeed *Time.fixedDeltaTime);
+        }
+        
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
