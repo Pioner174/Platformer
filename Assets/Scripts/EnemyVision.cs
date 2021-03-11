@@ -27,11 +27,11 @@ public class EnemyVision : MonoBehaviour
 
             if(currentHitObject.CompareTag("Player")){
 
-            }else{
+            }
+        }else{
                 currentHitObject = null;
                 _currentHitDistance = maxDistance;
             }
-        }
     }
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
