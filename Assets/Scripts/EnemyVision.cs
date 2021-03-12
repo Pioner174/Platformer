@@ -10,14 +10,21 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
 
     private Vector2 _origin;
-
     private Vector2 _direction;
-
     private float _currentHitDistance;
+    private EnemyController _enemyController;
+    private void Start() {
+        _enemyController = GetComponent<EnemyController>();
+    }
 
     private void Update() {
         _origin = transform.position;
-        _direction = Vector2.right;
+        if(_enemyController.IsFacingRight){
+           _direction = Vector2.right; 
+        }else{
+            _direction = Vector2.left;
+        }
+       
 
         RaycastHit2D hit = Physics2D.CircleCast(_origin, circleRadius, _direction, maxDistance, layerMask);
 

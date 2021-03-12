@@ -14,6 +14,10 @@ public class EnemyController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _isWait = false;
     private float _waitTime;
+
+    public bool IsFacingRight{
+        get => _isFacingRight;
+    }
     private void Start(){
         _rb = GetComponent<Rigidbody2D>();
         _LeftBoundaryPosition = transform.position;
