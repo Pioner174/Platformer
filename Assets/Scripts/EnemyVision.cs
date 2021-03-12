@@ -33,7 +33,7 @@ public class EnemyVision : MonoBehaviour
             _currentHitDistance = hit.distance;
 
             if(currentHitObject.CompareTag("Player")){
-
+                _enemyController.StartChasingPlayer();
             }
         }else{
                 currentHitObject = null;
