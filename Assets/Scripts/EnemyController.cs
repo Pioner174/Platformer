@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     private bool _isWait = false;
     private bool _isChasingPlayer = false;
     private float _waitTime;
+    private Vector2 _nextPoint;
 
     public bool IsFacingRight{
         get => _isFacingRight;
@@ -42,22 +43,33 @@ public class EnemyController : MonoBehaviour
         }
     }
     private void FixedUpdate() {
-        Vector2 nextPoint = Vector2.right * walkSpeed *Time.fixedDeltaTime;
-        if(!_isFacingRight){
-            nextPoint *= -1;
-        }
+        _nextPoint = Vector2.right * walkSpeed *Time.fixedDeltaTime;
+       
         if(_isChasingPlayer){
-            float distance = _playerTransform.position.x - transform.position.x; 
-            float multiplier = distance > 0 ? 1: -1;
-            nextPoint *= multiplier;
-            _rb.MovePosition((Vector2)transform.position + nextPoint);
+            ChasePlayer();
         }
         if(!_isWait && !_isChasingPlayer){
-            _rb.MovePosition((Vector2)transform.position + nextPoint);
+            Patrol();
         }
     }
 
-
+    private void Patrol(){
+        if(!_isFacingRight){
+            _nextPoint *= -1;
+        }
+        _rb.MovePosition((Vector2)transform.position + _nextPoint);
+    }
+    private void ChasePlayer(){
+        float distance = _playerTransform.position.x - transform.position.x; 
+        if(distance < 0 )
+            _nextPoint.x *= -1;
+        if (distance > 0f && !_isFacingRight){
+            Flip();
+        }else if(distance < 0f && _isFacingRight){
+            Flip();
+        }
+        _rb.MovePosition((Vector2)transform.position + _nextPoint);
+    }
 
     private void Wait(){
         _waitTime -= Time.deltaTime;
