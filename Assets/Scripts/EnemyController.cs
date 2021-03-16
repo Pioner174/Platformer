@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float walkSpeed = 1f;
     [SerializeField] private float timeToWait = 5f;
     [SerializeField] private float minDistance  = 1f;
+    [SerializeField] private float timeToChase = 3f;
 
     private Transform _playerTransform;
     private Rigidbody2D _rb;
@@ -16,6 +17,7 @@ public class EnemyController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _isWait = false;
     private bool _isChasingPlayer = false;
+    private float _chaseTime;
     private float _waitTime;
     private Vector2 _nextPoint;
 
@@ -25,6 +27,7 @@ public class EnemyController : MonoBehaviour
     }
     public void StartChasingPlayer(){
         _isChasingPlayer = true;
+        _chaseTime = timeToChase;
     }
     private void Start() {
         _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -32,10 +35,14 @@ public class EnemyController : MonoBehaviour
         _LeftBoundaryPosition = transform.position;
         _RightBoundaryPosition = _LeftBoundaryPosition + Vector2.right * walkDistance;
         _waitTime = timeToWait;
+        _chaseTime = timeToChase;
     }
     private void Update() {
+        if(_isChasingPlayer){
+            StartChaseTimer();
+        }
         if(_isWait && !_isChasingPlayer){
-            Wait();
+            StartWaitTimer();
             }
         
         if(ShouldWait()){
@@ -72,10 +79,17 @@ public class EnemyController : MonoBehaviour
         }else if(distance < 0.2f && _isFacingRight){
             Flip();
         }
-        _rb.MovePosition((Vector2)transform.position + _nextPoint);
+        _rb.MovePosition((Vector2)transform.position + _nextPoint*3);
     }
 
-    private void Wait(){
+    private void StartChaseTimer(){
+        _chaseTime -= Time.deltaTime;
+        if(_chaseTime < 0f){
+            _isChasingPlayer = false;
+            _chaseTime = timeToChase;
+        }
+    }
+    private void StartWaitTimer(){
         _waitTime -= Time.deltaTime;
             if(_waitTime <0f){
                 _waitTime = timeToWait;

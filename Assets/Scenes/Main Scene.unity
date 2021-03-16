@@ -809,6 +809,7 @@ MonoBehaviour:
   walkSpeed: 1
   timeToWait: 2.73
   minDistance: 3
+  timeToChase: 3
 --- !u!50 &696528760
 Rigidbody2D:
   serializedVersion: 4
@@ -817,7 +818,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696528758}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
