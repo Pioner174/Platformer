@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float walkDistance = 6f;
-    [SerializeField] private float walkSpeed = 1f;
+    [SerializeField] private float patrolSpeed = 1f;
+    [SerializeField] private float chasingSpeed = 3f;
     [SerializeField] private float timeToWait = 5f;
     [SerializeField] private float minDistance  = 1f;
     [SerializeField] private float timeToChase = 3f;
@@ -19,6 +20,7 @@ public class EnemyController : MonoBehaviour
     private bool _isChasingPlayer = false;
     private float _chaseTime;
     private float _waitTime;
+    private float _walkSpeed;
     private Vector2 _nextPoint;
 
 
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour
     public void StartChasingPlayer(){
         _isChasingPlayer = true;
         _chaseTime = timeToChase;
+        _walkSpeed = chasingSpeed;
     }
     private void Start() {
         _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -36,6 +39,7 @@ public class EnemyController : MonoBehaviour
         _RightBoundaryPosition = _LeftBoundaryPosition + Vector2.right * walkDistance;
         _waitTime = timeToWait;
         _chaseTime = timeToChase;
+        _walkSpeed = patrolSpeed;
     }
     private void Update() {
         if(_isChasingPlayer){
@@ -50,8 +54,8 @@ public class EnemyController : MonoBehaviour
         }
     }
     private void FixedUpdate() {
-        _nextPoint = Vector2.right * walkSpeed *Time.fixedDeltaTime;
-       if(Mathf.Abs(DistanceToPlayer()) < minDistance){
+        _nextPoint = Vector2.right * _walkSpeed *Time.fixedDeltaTime;
+       if(_isChasingPlayer && Mathf.Abs(DistanceToPlayer()) < minDistance){
            return;
        }
         if(_isChasingPlayer){
@@ -79,7 +83,7 @@ public class EnemyController : MonoBehaviour
         }else if(distance < 0.2f && _isFacingRight){
             Flip();
         }
-        _rb.MovePosition((Vector2)transform.position + _nextPoint*3);
+        _rb.MovePosition((Vector2)transform.position + _nextPoint);
     }
 
     private void StartChaseTimer(){
@@ -87,6 +91,7 @@ public class EnemyController : MonoBehaviour
         if(_chaseTime < 0f){
             _isChasingPlayer = false;
             _chaseTime = timeToChase;
+            _walkSpeed = patrolSpeed;
         }
     }
     private void StartWaitTimer(){
