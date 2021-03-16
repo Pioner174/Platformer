@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float walkDistance = 6f;
     [SerializeField] private float walkSpeed = 1f;
     [SerializeField] private float timeToWait = 5f;
+    [SerializeField] private float minDistance  = 1f;
 
     private Transform _playerTransform;
     private Rigidbody2D _rb;
@@ -17,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private bool _isChasingPlayer = false;
     private float _waitTime;
     private Vector2 _nextPoint;
+
 
     public bool IsFacingRight{
         get => _isFacingRight;
@@ -32,11 +34,9 @@ public class EnemyController : MonoBehaviour
         _waitTime = timeToWait;
     }
     private void Update() {
-        if(_isWait){
+        if(_isWait && !_isChasingPlayer){
             Wait();
             }
-        
-
         
         if(ShouldWait()){
             _isWait = true;
@@ -44,7 +44,9 @@ public class EnemyController : MonoBehaviour
     }
     private void FixedUpdate() {
         _nextPoint = Vector2.right * walkSpeed *Time.fixedDeltaTime;
-       
+       if(Mathf.Abs(DistanceToPlayer()) < minDistance){
+           return;
+       }
         if(_isChasingPlayer){
             ChasePlayer();
         }
@@ -52,7 +54,9 @@ public class EnemyController : MonoBehaviour
             Patrol();
         }
     }
-
+    private float DistanceToPlayer(){
+        return _playerTransform.position.x - transform.position.x;
+    }
     private void Patrol(){
         if(!_isFacingRight){
             _nextPoint *= -1;
@@ -60,12 +64,12 @@ public class EnemyController : MonoBehaviour
         _rb.MovePosition((Vector2)transform.position + _nextPoint);
     }
     private void ChasePlayer(){
-        float distance = _playerTransform.position.x - transform.position.x; 
+        float distance = DistanceToPlayer(); 
         if(distance < 0 )
             _nextPoint.x *= -1;
-        if (distance > 0f && !_isFacingRight){
+        if (distance > 0.2f && !_isFacingRight){
             Flip();
-        }else if(distance < 0f && _isFacingRight){
+        }else if(distance < 0.2f && _isFacingRight){
             Flip();
         }
         _rb.MovePosition((Vector2)transform.position + _nextPoint);
