@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 1
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -120,10 +120,21 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.583
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1234964377
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +642,7 @@ GameObject:
   - component: {fileID: 599770221}
   - component: {fileID: 599770222}
   m_Layer: 0
-  m_Name: Wooden_Doll
+  m_Name: model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,8 +722,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05958603, y: 0.3098475}
-  m_Size: {x: 1.667885, y: 2.334725}
+  m_Offset: {x: 0.12092618, y: 0.3098475}
+  m_Size: {x: 1.7292244, y: 2.334725}
   m_Direction: 0
 --- !u!114 &696528759
 MonoBehaviour:
@@ -730,7 +741,7 @@ MonoBehaviour:
   patrolSpeed: 1
   chasingSpeed: 3
   timeToWait: 2.73
-  minDistance: 3
+  minDistance: 1.7
   timeToChase: 3
 --- !u!114 &696528762
 MonoBehaviour:
@@ -762,7 +773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be67299054834f4bb659f83b5a0b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  healthSlider: {fileID: 1173921836}
+  totalHealth: 100
 --- !u!114 &599770222
 MonoBehaviour:
   m_ObjectHideFlags: 0

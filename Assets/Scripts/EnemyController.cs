@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class EnemyController : MonoBehaviour
     private float _waitTime;
     private float _walkSpeed;
     private Vector2 _nextPoint;
+    private Transform _sliderTransform;
 
 
     public bool IsFacingRight{
@@ -40,6 +42,7 @@ public class EnemyController : MonoBehaviour
         _waitTime = timeToWait;
         _chaseTime = timeToChase;
         _walkSpeed = patrolSpeed;
+        _sliderTransform = GameObject.Find("Slider (1)").GetComponent<Transform>();
     }
     private void Update() {
         if(_isChasingPlayer){
@@ -113,6 +116,7 @@ public class EnemyController : MonoBehaviour
     }
     void Flip(){
         _isFacingRight  = !_isFacingRight;
+        _sliderTransform.localScale *= -1;
         Vector3 playerscale = transform.localScale;
         playerscale.x *= -1;
         transform.localScale = playerscale;

@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     private Animator _animator;
     private float _health;
     private void Start() {
+        
         _health = totalHealth;
         _animator = GetComponent<Animator>();
         InitHealth();
