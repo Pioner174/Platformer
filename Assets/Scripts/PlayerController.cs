@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]private float speedX = 4f;
     [SerializeField]private float speedY =  1f;
-    [SerializeField]private Animator animator; 
+    [SerializeField]private Animator animator;
+    [SerializeField]private Transform playerModelTransform;
 
     private bool _isFinish = false;
     private bool _isGround = false;
@@ -69,9 +70,9 @@ public class PlayerController : MonoBehaviour
 
     void Flip(){
         _IsFasingRight  = !_IsFasingRight;
-        Vector3 playerscale = transform.localScale;
+        Vector3 playerscale = playerModelTransform.transform.localScale;
         playerscale.x *= -1;
-        transform.localScale = playerscale;
+        playerModelTransform.transform.localScale = playerscale;
     }
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.CompareTag("Ground")){

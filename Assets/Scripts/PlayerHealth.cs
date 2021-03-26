@@ -14,18 +14,19 @@ public class PlayerHealth : MonoBehaviour
     
     private void Start() {
         _health = totalHealth;
+        InitHealth();
     }
-    private void Update() {
-        healthSlider.value = _health/totalHealth;
-    }
+    
     public void ReduceHealth(float damage){
         _animator.SetTrigger("takeDamage");
         _health -= damage;
-
+        InitHealth();
         if (_health<=0f)
         Die();
     }
-
+    private void InitHealth(){
+        healthSlider.value = _health/totalHealth;
+    }
     private void Die(){
         gameObject.SetActive(false);
     }
