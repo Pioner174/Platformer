@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private Transform enemyModelTransform;
     [SerializeField] private float walkDistance = 6f;
     [SerializeField] private float patrolSpeed = 1f;
     [SerializeField] private float chasingSpeed = 3f;
     [SerializeField] private float timeToWait = 5f;
     [SerializeField] private float minDistance  = 1f;
     [SerializeField] private float timeToChase = 3f;
+    
 
     private Transform _playerTransform;
     private Rigidbody2D _rb;
@@ -23,7 +25,7 @@ public class EnemyController : MonoBehaviour
     private float _waitTime;
     private float _walkSpeed;
     private Vector2 _nextPoint;
-    private Transform _sliderTransform;
+    
 
 
     public bool IsFacingRight{
@@ -42,7 +44,6 @@ public class EnemyController : MonoBehaviour
         _waitTime = timeToWait;
         _chaseTime = timeToChase;
         _walkSpeed = patrolSpeed;
-        _sliderTransform = GameObject.Find("Slider (1)").GetComponent<Transform>();
     }
     private void Update() {
         if(_isChasingPlayer){
@@ -116,9 +117,8 @@ public class EnemyController : MonoBehaviour
     }
     void Flip(){
         _isFacingRight  = !_isFacingRight;
-        _sliderTransform.localScale *= -1;
-        Vector3 playerscale = transform.localScale;
+        Vector3 playerscale = enemyModelTransform.localScale;
         playerscale.x *= -1;
-        transform.localScale = playerscale;
+        enemyModelTransform.localScale = playerscale;
     }
 }

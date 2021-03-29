@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     private void Start() {
         
         _health = totalHealth;
-        _animator = GetComponent<Animator>();
+        _animator =  gameObject.GetComponent<Animator>();
         InitHealth();
     }
 
