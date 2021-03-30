@@ -7,19 +7,16 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private Slider healthSlider;
     [SerializeField] private float totalHealth = 100f;
-
-
-    private Animator _animator;
+    [SerializeField]private Animator animator;
     private float _health;
     private void Start() {
         
         _health = totalHealth;
-        _animator =  gameObject.GetComponent<Animator>();
         InitHealth();
     }
 
     public void ReduceHealth(float damage){
-        _animator.SetTrigger("takeDamage");
+        animator.SetTrigger("takeDamage");
         _health -= damage;
         InitHealth();
         if (_health<=0f)

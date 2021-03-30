@@ -457,7 +457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385927485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6300001, y: -1.9800003, z: 8.8823185}
+  m_LocalPosition: {x: -1.6303654, y: -1.9800003, z: 8.8823185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2008972027}
@@ -682,7 +682,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6300001, y: -1.9800003, z: 8.8823185}
+  m_LocalPosition: {x: -1.6303654, y: -1.9800003, z: 8.8823185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 137121157}
@@ -1031,6 +1031,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1076210219 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6153977432083474523, guid: 1017acf84978b4748a3fa963dacf02ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 6067965481155818864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1332987413
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,6 +5354,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1425607165 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95941530780404234, guid: 8cc81305d37e7f546ac8b6604aca1497,
+    type: 3}
+  m_PrefabInstance: {fileID: 4896173981083168993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1563431837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,6 +5751,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 317258357, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1425607165}
     - target: {fileID: 1155457231, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5952,5 +5968,15 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8478374386714637006, guid: 1017acf84978b4748a3fa963dacf02ff,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1076210219}
+    - target: {fileID: 8478374386714637006, guid: 1017acf84978b4748a3fa963dacf02ff,
+        type: 3}
+      propertyPath: animatror
+      value: 
+      objectReference: {fileID: 1076210219}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1017acf84978b4748a3fa963dacf02ff, type: 3}
