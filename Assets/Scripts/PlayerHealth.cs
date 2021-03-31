@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private Slider healthSlider;
     [SerializeField] private float totalHealth = 100f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Slider healthSlider;
+
     private float _health;
     
     private void Start() {

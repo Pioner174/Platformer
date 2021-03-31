@@ -758,7 +758,7 @@ Transform:
   m_GameObject: {fileID: 6066850276654658421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6063013863240296315}
   - {fileID: 6063398134295618125}
@@ -1690,8 +1690,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.1188293, y: 0.6677936}
-  m_Size: {x: 2.2970567, y: 3.1100287}
+  m_Offset: {x: 0.024104027, y: 0.23300758}
+  m_Size: {x: 1.4863776, y: 2.5018554}
   m_Direction: 0
 --- !u!114 &3932130292808911263
 MonoBehaviour:
@@ -1742,8 +1742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be67299054834f4bb659f83b5a0b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 6067965481764223529}
   totalHealth: 100
+  animator: {fileID: 6153977432083474523}
 --- !u!114 &2013218828397626521
 MonoBehaviour:
   m_ObjectHideFlags: 0
