@@ -1417,6 +1417,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 6067965481155818864}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1285411356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6067965481764223529, guid: 1017acf84978b4748a3fa963dacf02ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 6067965481155818864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1332987413
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,6 +5763,7 @@ GameObject:
   - component: {fileID: 1561746453}
   - component: {fileID: 1561746455}
   - component: {fileID: 1561746454}
+  - component: {fileID: 1561746456}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -5817,6 +5830,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561746452}
   m_CullTransparentMesh: 0
+--- !u!95 &1561746456
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561746452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fea7ffbd61dceba4b879609414379b11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1563431837
 GameObject:
   m_ObjectHideFlags: 0
@@ -6582,18 +6614,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2062299070 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2037214971, guid: 8cc81305d37e7f546ac8b6604aca1497,
-    type: 3}
-  m_PrefabInstance: {fileID: 4896173981083168993}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2064781110
 GameObject:
   m_ObjectHideFlags: 0
@@ -6698,6 +6718,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 317258357, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 430616402}
     - target: {fileID: 1155457231, guid: 8cc81305d37e7f546ac8b6604aca1497, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6811,6 +6835,11 @@ PrefabInstance:
       propertyPath: currentHitObject
       value: 
       objectReference: {fileID: 437829090}
+    - target: {fileID: 2013218828397626521, guid: 1017acf84978b4748a3fa963dacf02ff,
+        type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6067965482302045495, guid: 1017acf84978b4748a3fa963dacf02ff,
         type: 3}
       propertyPath: m_Name
@@ -6890,6 +6919,6 @@ PrefabInstance:
         type: 3}
       propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 2062299070}
+      objectReference: {fileID: 1285411356}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1017acf84978b4748a3fa963dacf02ff, type: 3}
