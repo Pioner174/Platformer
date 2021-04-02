@@ -42,7 +42,6 @@
      <Compile Include="Assets\Free_Pack\Demo_GameResource\Script\Demo_GM.cs" />
      <Compile Include="Assets\Free_Pack\Demo_GameResource\Script\DestroyEffect.cs" />
      <Compile Include="Assets\Free_Pack\Demo_GameResource\Script\WoodDoll_Mgr.cs" />
-     <Compile Include="Assets\GameOverScript.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.6.3\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.6.3\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.6.3\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
@@ -72,8 +71,11 @@
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyVision.cs" />
      <Compile Include="Assets\Scripts\Finish.cs" />
+     <Compile Include="Assets\Scripts\GameCanvas.cs" />
+     <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\LeverArm.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\PauseCanvas.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
