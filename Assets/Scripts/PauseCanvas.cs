@@ -6,5 +6,6 @@ public class PauseCanvas : MonoBehaviour
 {
     public void ContinueHandler(){
         gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
