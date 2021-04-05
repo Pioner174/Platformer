@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Finish _finish;
     private LeverArm _leverArm;
+    private AudioSource _jumpSound;
     
 
     const float SpeedMultyplier = 50f;
@@ -31,14 +32,17 @@ public class PlayerController : MonoBehaviour
         _rb =GetComponent<Rigidbody2D>();
         _finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();   
         _leverArm = FindObjectOfType<LeverArm>(); 
+        _jumpSound = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         _horizontal = Input.GetAxis("Horizontal");
         animator.SetFloat("SpeedX", Mathf.Abs(_horizontal));
+
         if (Input.GetKey(KeyCode.W) && _isGround){
             _isJump=true;
+            _jumpSound.Play();
         }
         if(Input.GetKeyDown(KeyCode.F)){
             if(_isFinish){
