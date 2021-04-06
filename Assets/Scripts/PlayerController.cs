@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         _horizontal = Input.GetAxis("Horizontal");
         animator.SetFloat("SpeedX", Mathf.Abs(_horizontal));
 
-        if (Input.GetKey(KeyCode.W) && _isGround){
+        if (Input.GetKeyDown(KeyCode.W) && _isGround){
             _isJump=true;
             jumpSound.Play();
         }
