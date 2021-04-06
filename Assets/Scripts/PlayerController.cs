@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float speedY =  1f;
     [SerializeField]private Animator animator;
     [SerializeField]private Transform playerModelTransform;
+    [SerializeField] private AudioSource jumpSound;
 
     private bool _isFinish = false;
     private bool _isGround = false;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Finish _finish;
     private LeverArm _leverArm;
-    private AudioSource _jumpSound;
+    
     
 
     const float SpeedMultyplier = 50f;
@@ -32,7 +33,6 @@ public class PlayerController : MonoBehaviour
         _rb =GetComponent<Rigidbody2D>();
         _finish = GameObject.FindGameObjectWithTag("Finish").GetComponent<Finish>();   
         _leverArm = FindObjectOfType<LeverArm>(); 
-        _jumpSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) && _isGround){
             _isJump=true;
-            _jumpSound.Play();
+            jumpSound.Play();
         }
         if(Input.GetKeyDown(KeyCode.F)){
             if(_isFinish){

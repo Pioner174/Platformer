@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float totalHealth = 100f;
     [SerializeField] private Animator _animator;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private AudioSource damageSound;
 
     private float _health;
     
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     public void ReduceHealth(float damage){
         _animator.SetTrigger("takeDamage");
         _health -= damage;
+        damageSound.Play();
         InitHealth();
         if (_health<=0f)
         Die();
