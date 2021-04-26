@@ -7,7 +7,8 @@ public class GameCanvas : MonoBehaviour
     [SerializeField] private GameObject pauseCanvas;
 
     public void PauseHandler(){
-        pauseCanvas.SetActive(true);
         Time.timeScale = 0;
+        pauseCanvas.SetActive(true);
+        
     }
 }
