@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063398134295618125}
   - component: {fileID: 6252957782903459767}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vibe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063421119295856663}
   - component: {fileID: 6252848997030639407}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6062985778676680133}
   - component: {fileID: 6252358238793503877}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069269638896986609}
   - component: {fileID: 6253166719470081113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063013863240296315}
   - component: {fileID: 6252225830415742625}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vibe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069212629739577703}
   - component: {fileID: 6252361462144034197}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069498077139247281}
   - component: {fileID: 6253111524831877003}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyes_brow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063256218453679187}
   - component: {fileID: 6252384466777587961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063299099486546407}
   - component: {fileID: 6251521434723278487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyes_brow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063305066027178917}
   - component: {fileID: 6153977432083474523}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063419857201970987}
   - component: {fileID: 6251332808875921231}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vibe2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 6063253732623973125}
   - component: {fileID: 6251461609540570379}
   - component: {fileID: 6153920204158205935}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063160875255778097}
   - component: {fileID: 6252383971709679355}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069354577415756743}
   - component: {fileID: 6253226083765861233}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1143,7 +1143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063355141355487449}
   - component: {fileID: 6251526136668224863}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063378560750753875}
   - component: {fileID: 6252857805803079461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063019982705416551}
   - component: {fileID: 6252984779282834391}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg_Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1393,7 +1393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6067965481449208612}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 6067965481691108760}
   - component: {fileID: 6067965481691108761}
   - component: {fileID: 6067965481691108766}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,7 +1529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6067965481764223534}
   - component: {fileID: 6067965481764223529}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Slider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 1185146667018394134}
   - component: {fileID: 8478374386714637006}
   - component: {fileID: 2013218828397626521}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1706,8 +1706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyModelTransform: {fileID: 6063305066027178917}
-  walkDistance: 5
-  patrolSpeed: 1
+  walkDistance: 10
+  patrolSpeed: 2
   chasingSpeed: 3
   timeToWait: 2.73
   minDistance: 1.7
@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 6067965482427714619}
   - component: {fileID: 6067965482427714629}
   - component: {fileID: 6067965482427714618}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 6067965482633085856}
   - component: {fileID: 6067965482633085858}
   - component: {fileID: 6067965482633085859}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1917,7 +1917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063514710584191567}
   - component: {fileID: 6252851218261418135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tear (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1998,7 +1998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069561527015148855}
   - component: {fileID: 6252955877010281457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eyes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

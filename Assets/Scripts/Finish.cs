@@ -18,6 +18,7 @@ public class Finish : MonoBehaviour
         if (_isActivated){
             gameObject.SetActive(false);
             LevelComnpleteCanvas.SetActive(true);
+            Time.timeScale = 0f;
         }
         else{
             MessageUI.SetActive(true);
